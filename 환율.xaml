@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1060.8,946.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>719.2,925.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>환율_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -78,14 +78,18 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://finance.daum.net/exchanges" Name="환율사이트" />
       <Variable x:TypeArguments="sd:DataTable" Name="Date_Table" />
-      <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\1020a\Documents\UiPath\0801_미니프로젝트\&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;일_환율정보.xlsx&quot;]" Name="Excel" />
+      <Variable x:TypeArguments="x:String" Name="Excel">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\1020a\Documents\UiPath\0801_미니프로젝트\&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;일_주식및 환율정보.xlsx&quot;" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.4,209.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[환율사이트]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.4,209.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[환율사이트]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
